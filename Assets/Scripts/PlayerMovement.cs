@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
-    public float movementSpeed = 6f;
-    public float jumpForce = 5f;
+    [SerializeField] float movementSpeed = 6f;
+    [SerializeField] float jumpForce = 5f;
+
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask ground;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * 5f, rb.velocity.y, verticalInput * 5f);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, 5f, rb.velocity.z);
         }
+    }
+    bool isGrounded()
+    {
+        return Physics.CheckSphere(groundCheck.position, .1f, ground);
     }
 }
