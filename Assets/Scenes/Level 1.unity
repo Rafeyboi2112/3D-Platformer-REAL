@@ -605,6 +605,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3645870285365065582, guid: ab263719769a1a24ca93a524d8ac71ae, type: 3}
   m_PrefabInstance: {fileID: 1633297703}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &688239281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
+  m_PrefabInstance: {fileID: 3788994629284468325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1201,14 @@ PrefabInstance:
     - target: {fileID: 242470835679247808, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902183968783388598, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 688239281}
+    - target: {fileID: 1902183968783388598, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
+      propertyPath: mouseSensitivity
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4641809461876017624, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: coinsText
