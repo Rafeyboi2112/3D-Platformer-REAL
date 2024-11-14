@@ -157,12 +157,8 @@ Transform:
   - {fileID: 1691233193}
   - {fileID: 1847512653}
   - {fileID: 184281400}
-<<<<<<< Updated upstream
   - {fileID: 1034194617}
   - {fileID: 1714417266}
-=======
-  - {fileID: 1410627549}
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &184281400 stripped
@@ -1162,11 +1158,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab263719769a1a24ca93a524d8ac71ae, type: 3}
---- !u!4 &1410627549 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8247606672972510355, guid: d23ec36bc1f2a15439eb261daf0215db, type: 3}
-  m_PrefabInstance: {fileID: 950416342}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1633297703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1377,11 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953874689240490683, guid: fa83eb3f32baf1c46bd764e7e9448016, type: 3}
       propertyPath: speed
-<<<<<<< Updated upstream
       value: 3
-=======
-      value: 2
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7557885644744753397, guid: fa83eb3f32baf1c46bd764e7e9448016, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1492,8 +1479,5 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1283001118}
   - {fileID: 143874033}
-<<<<<<< Updated upstream
   - {fileID: 321863020}
   - {fileID: 623515558}
-=======
->>>>>>> Stashed changes
