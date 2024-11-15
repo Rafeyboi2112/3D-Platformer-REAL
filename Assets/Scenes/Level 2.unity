@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.06, z: -6.11}
+  m_FollowOffset: {x: 0, y: 0.06, z: -6.43}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -505,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372466022}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.03141795, y: -0.0000000037234518, z: -1.17041e-10, w: 0.99950635}
+  m_LocalRotation: {x: -0.031662162, y: 0, z: 0, w: 0.99949867}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1421,7 +1421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372828944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.004909806, y: -8.7188035e-12, z: 4.279967e-14, w: 0.99998796}
+  m_LocalRotation: {x: 0.0046654786, y: 0, z: 0, w: 0.99998915}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.06, z: -6.11}
+  m_FollowOffset: {x: 0, y: 0.06, z: -6.43}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1728,7 +1728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636434577}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.013280275, y: 7.581365e-10, z: 1.00691495e-11, w: 0.99991184}
+  m_LocalRotation: {x: -0.013524587, y: 0, z: 0, w: 0.99990857}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1813,6 +1813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718361407}
   - component: {fileID: 1718361406}
+  - component: {fileID: 1718361408}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -1862,12 +1863,12 @@ MonoBehaviour:
   m_YAxis:
     Value: -0.11
     m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_MaxSpeed: 50
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -1886,12 +1887,12 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 250
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertInput: 1
+    m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
     m_Wrap: 1
@@ -1912,14 +1913,14 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_BindingMode: 4
-  m_SplineCurvature: 0.275
+  m_SplineCurvature: 0.378
   m_Orbits:
-  - m_Height: 4.41
+  - m_Height: 5.68
     m_Radius: 1.18
-  - m_Height: 2.5
-    m_Radius: 6.11
+  - m_Height: 3.1
+    m_Radius: 5.21
   - m_Height: 0.06
-    m_Radius: 6.11
+    m_Radius: 6.43
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 1372828945}
@@ -1934,7 +1935,7 @@ Transform:
   m_GameObject: {fileID: 1718361405}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: -6.11}
+  m_LocalPosition: {x: 0, y: 0.66, z: -6.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1943,6 +1944,36 @@ Transform:
   - {fileID: 372466024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718361408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718361405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1001 &1728021213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2079,7 +2110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.06, z: -6.11}
+  m_FollowOffset: {x: 0, y: 0.06, z: -6.43}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2365,6 +2396,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1585783231}
     - target: {fileID: 1902183968783388598, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
+      propertyPath: jumpForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902183968783388598, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1119596246}
@@ -2386,23 +2421,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.22
+      value: -12.86
       objectReference: {fileID: 0}
     - target: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99950635
+      value: 0.99949867
       objectReference: {fileID: 0}
     - target: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03141795
+      value: -0.03166216
       objectReference: {fileID: 0}
     - target: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000037234518
+      value: -0.00000003973357
       objectReference: {fileID: 0}
     - target: {fileID: 3638183487132045276, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.17041e-10
+      value: -0.0000000012586816
       objectReference: {fileID: 0}
     - target: {fileID: 4641809461876017624, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: coinsText
@@ -2426,6 +2461,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6297692726815173072, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297692726815173072, guid: 89fefc2b72c5e764c84aefc1ae006123, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
