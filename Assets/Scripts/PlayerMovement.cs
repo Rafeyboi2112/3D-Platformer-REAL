@@ -5,52 +5,62 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] float movementSpeed = 6f;
-    [SerializeField] float jumpForce = 5f;
+    public float movementSpeed = 5f;
+    public float jumpForce = 5f;
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+
+    public float gravity = -9.81f;
+    private float velocityY;
+
+    public Transform cam;
+    public CharacterController controller;
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
 
     [SerializeField] AudioSource jumpSound;
 
-    [SerializeField] float mouseSensitivity = 100f;
-    float xRotation = 0f;
-    [SerializeField] Transform playerCamera;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
-        rb.velocity = new Vector3(moveDirection.x * movementSpeed, rb.velocity.y, moveDirection.z * movementSpeed);
+        //rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * movementSpeed * Time.deltaTime);
+        }
+
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
         }
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        velocityY += gravity * Time.deltaTime;
+        controller.Move(new Vector3(0f, velocityY, 0f) * Time.deltaTime);
     }
 
     void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        velocityY = Mathf.Sqrt(jumpForce * -2f * gravity);
         jumpSound.Play();
     }
 
