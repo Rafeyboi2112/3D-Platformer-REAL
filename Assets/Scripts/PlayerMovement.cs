@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
-    public float movementSpeed = 5f;
-    public float jumpForce = 5f;
+    [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float jumpForce = 5f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
