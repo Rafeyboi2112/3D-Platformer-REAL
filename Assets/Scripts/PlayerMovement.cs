@@ -41,13 +41,20 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
-            myAnim.SetBool("isOnGround", false);
+        }
+
+        if (IsGrounded())
+        {
+            myAnim.SetBool("Jump", false);
+        }
+        else
+        {
+
+            myAnim.SetBool("Jump", true);
         }
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = 0.0f;
-
-        myAnim.SetBool("IsOnGround", true);
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
