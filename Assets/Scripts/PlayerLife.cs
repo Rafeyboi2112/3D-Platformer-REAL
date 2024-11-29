@@ -29,14 +29,9 @@ public class PlayerLife : MonoBehaviour
 
     void Die()
     {
-        Invoke(nameof(ReloadLevel), 1f);
+        SceneManager.LoadScene(3);
         dead = true;
         deathSound.Play();
-    }
-
-    void ReloadLevel()
-    {
-        SceneManager.LoadScene(3);
     }
 }
 
